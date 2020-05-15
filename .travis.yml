@@ -12,7 +12,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "workflow-frontend"
-  environment: "WorkflowFrontend-env"
+  env: "WorkflowFrontend-env"
   bucket_name: "elasticbeanstalk-us-east-2-716850754956"
   bucket_path: "workflow-frontend"
   on:
