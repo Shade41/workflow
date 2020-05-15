@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true jhunady/workflow-frontend npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "workflow-frontend"
+  environment: "WorkflowFrontend-env"
+  bucket_name: "elasticbeanstalk-us-east-2-716850754956"
+  bucket_path: "workflow-frontend"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
